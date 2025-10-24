@@ -21,7 +21,7 @@
 				<img src={iconSrc} alt={name} class="h-full object-cover"/>
 			</div>
 			<figcaption
-				class="w-full text-wrap whitespace-wrap break-all content-center rounded-b-xl bg-green-900 p-2 text-xl font-bold"
+				class="w-full text-wrap whitespace-wrap content-center rounded-b-xl bg-green-900 p-2 text-xl font-bold"
 			>
 				{name}
 			</figcaption>
@@ -42,7 +42,7 @@
 		transition: 0.2s linear;
 		perspective: 1000px;
 	}
-.perspective:hover {
+	.perspective:hover {
         transform: scale(1.05);
         backdrop-filter: drop-shadow(4px 4px 10px red);
     }

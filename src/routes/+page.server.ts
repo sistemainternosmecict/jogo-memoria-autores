@@ -1,8 +1,8 @@
 import { resolve } from 'path';
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
 import fs from 'fs';
 
-export const load: PageLoad = ({ params }) => {
+export const load: PageServerLoad = ({ params }) => {
     const subDir = "icons";
     const root = "./static/"
     const directory = resolve(`${root}${subDir}`);

@@ -86,12 +86,12 @@
 </script>
 
 <div class="content flex min-h-screen flex-col bg-[#0b6170] text-white">
-	<section class="flex p-4">
-		<h1 class=" text-shadow-lg text-center text-5xl font-bold">Jogo da Memória</h1>
-		<div class="shadow-xl bottom-0 z-1 p-2 rounded-2xl flex justify-between max-h-[100px] w-screen bg-[#0b6170]">
-			<img class="object-contain " src="/logo.svg" alt="logo" />
+	<section class="flex p-4 flex-wrap justify-center">
+		<h1 class="text-shadow-lg text-center text-5xl font-bold">Jogo da Memória</h1>
+		<div class="flex-wrap shadow-xl p-5 bottom-0 z-1 rounded-2xl flex justify-between  w-screen ">
+			<img class="md:m-0 m-auto object-contain max-h-[130px]" src="/logo.webp" alt="logo" />
 
-			<section class="">
+			<section class="mt-5 md:m-0">
 					<p>Em conjunto com:</p>
 					<div class="pl-3">
 					 <h1 class= "font-bold">Secretaria Municipal de</h1>
