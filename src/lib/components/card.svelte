@@ -20,13 +20,7 @@
 			<div class="dr ax-h-[176px] min-w-0 flex-1 overflow-hidden rounded-2xl bg-white">
 				<img src={iconSrc} alt={name}/>
 			</div>
-			<!-- <figcaption
-				class="w-full text-wrap whitespace-wrap content-center rounded-b-xl bg-green-900 p-2 text-xl font-bold"
-			>
-				{name}
-			</figcaption> -->
 		</figure>
-
 		<!-- Back -->
 		<figure class="card-side back items-center justify-center bg-black text-white"></figure>
 	</div>
@@ -35,7 +29,7 @@
 <style>
 
 	:root{
-		--cardSize: 4em;
+		--cardSize: 4.5em;
 	}
 
 	.perspective {
@@ -72,7 +66,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		border-radius: 1rem;
+		border-radius: .5rem;
 		background-size: cover;
 	}
 

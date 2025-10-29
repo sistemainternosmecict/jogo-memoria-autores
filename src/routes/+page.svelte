@@ -90,10 +90,9 @@
 		<div class="flex items-center bg-[#063636] p-4 z-1 justify-between  w-screen ">
 			<h1 class="text-shadow-lg text-center text-4xl font-bold poppins-bold text-[#007D7A]">Jogo da Memória <span class="text-[#F4A261]">Autores</span></h1>
 			
-			
-			<section class="p-2 flex-col items-center">
-				<!-- <p class="text-center">Em conjunto com</p> -->
-				<img class="md:m-0 m-auto object-contain max-h-[60px]" src="/sub_logo.svg" alt="logo" />
+			<section class="p-2 flex items-center">
+				<img class="m-2 object-contain max-h-[80px] drop-shadow-[0_1px_2px_rgba(0,0,0,1)]" src="/LOGO_FLIS.svg" alt="logo da flis" />
+				<img class="m-2 object-contain max-h-[60px] drop-shadow-[0_1px_2px_rgba(0,0,0,1)]" src="/sub_logo.svg" alt="logo da sub de tecnologia" />
 			</section>
 		</div>
 	</section>
