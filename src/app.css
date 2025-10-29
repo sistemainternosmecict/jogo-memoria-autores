@@ -1,5 +1,12 @@
 @import 'tailwindcss';
 
+@layer utilities {
+  .drag-none {
+    -webkit-user-drag: none;
+    user-drag: none;
+  }
+}
+
 .poppins-thin {
   font-family: "Poppins", sans-serif;
   font-weight: 100;

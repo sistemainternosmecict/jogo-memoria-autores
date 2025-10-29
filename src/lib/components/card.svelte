@@ -14,7 +14,7 @@
 </script>
 
 <button onclick={mouseClick} class="perspective">
-	<div class="card-container {flipped ? 'flipped' : ''}">
+	<div class="select-none card-container {flipped ? 'flipped' : ''}">
 		<!-- Front -->
 		<figure class="card-side front flex w-full justify-stretch text-white">
 			<div class="dr ax-h-[176px] min-w-0 flex-1 overflow-hidden rounded-2xl bg-white">
@@ -29,7 +29,7 @@
 <style>
 
 	:root{
-		--cardSize: 4.5em;
+		--cardSize: 4em;
 	}
 
 	.perspective {

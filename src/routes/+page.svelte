@@ -85,14 +85,14 @@
 	let locked = false;
 </script>
 
-<div class="content flex min-h-screen flex-col bg-[#f4a361c0] text-white">
+<div class="select-none content flex min-h-screen flex-col bg-[#ffffff] text-white">
 	<section class="flex flex-wrap justify-center">
-		<div class="flex items-center bg-[#063636] p-4 z-1 justify-between  w-screen ">
-			<h1 class="text-shadow-lg text-center text-4xl font-bold poppins-bold text-[#007D7A]">Jogo da Memória <span class="text-[#F4A261]">Autores</span></h1>
+		<div class="shadow-xl flex items-center bg-[#063636] p-4 z-1 justify-between  w-screen ">
+			<h1 class="text-shadow-lg text-center text-3xl font-bold poppins-bold text-[#ffffff]">Jogo da Memória <span class="text-[#5291ad] poppins-thin">Autores</span></h1>
 			
 			<section class="p-2 flex items-center">
-				<img class="m-2 object-contain max-h-[80px] drop-shadow-[0_1px_2px_rgba(0,0,0,1)]" src="/LOGO_FLIS.svg" alt="logo da flis" />
-				<img class="m-2 object-contain max-h-[60px] drop-shadow-[0_1px_2px_rgba(0,0,0,1)]" src="/sub_logo.svg" alt="logo da sub de tecnologia" />
+				<img class="drag-none m-2 object-contain max-h-[80px] drop-shadow-[0_1px_2px_rgba(0,0,0,1)]" src="/LOGO_FLIS.svg" alt="logo da flis" />
+				<img class="drag-none m-2 object-contain max-h-[60px] drop-shadow-[0_1px_2px_rgba(0,0,0,1)]" src="/sub_logo.svg" alt="logo da sub de tecnologia" />
 			</section>
 		</div>
 	</section>
