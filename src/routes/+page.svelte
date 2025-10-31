@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Card from '$lib/components/card.svelte';
+	import Titulo from '$lib/components/titulo.svelte';
 	import type { PageProps } from './$types';
 	import { shuffle } from '$lib/utils';
 	import WinScreen from '$lib/components/winScreen.svelte';
@@ -88,7 +89,7 @@
 <div class="select-none content flex min-h-screen flex-col bg-[#ffffff] text-white">
 	<section class="flex flex-wrap justify-center">
 		<div class="shadow-xl b flex flex-col sm:flex-row items-center bg-[#063636] p-4 z-1 justify-between  w-screen ">
-			<img class="drag-none w-64 drop-shadow-[0_1px_2px_rgba(0,0,0,1)]" src="/logo-autores.png" alt="Logo do jogo">
+			<Titulo class="logo drag-none w-64 drop-shadow-[0_1px_2px_rgba(0,0,0,1)]"/>
 			<!-- <h1 class="text-shadow-lg text-center text-3xl font-bold poppins-bold text-[#ffffff]">Jogo da Memória <span class="text-[#5291ad] poppins-thin">Autores</span></h1> -->
 			
 			<section class="p-2 flex flex-row items-center">
@@ -114,5 +115,11 @@
 		<WinScreen resetCallback={reset}></WinScreen>
 	{/if}
 </div>
+
+<style>
+	.cor1{
+		fill: red;
+	}
+</style>
 
 
