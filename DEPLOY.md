@@ -1,5 +1,9 @@
 # 🚀 Guia de Deploy no Render
 
+## ⚠️ IMPORTANTE: Tipo de Serviço
+
+**Você DEVE criar um "Static Site", NÃO um "Web Service"!**
+
 ## Passo a Passo
 
 ### 1. Preparar o Repositório
@@ -18,28 +22,27 @@ git push origin feature/quebra-cabeca-jogo
 2. Faça login ou crie uma conta gratuita
 3. Conecte sua conta do GitHub
 
-### 3. Criar o Static Site
+### 3. Criar o Static Site (MÉTODO RECOMENDADO)
+
+**ATENÇÃO: Escolha "Static Site", não "Web Service"**
 
 1. No Dashboard do Render, clique em **"New +"**
-2. Selecione **"Static Site"**
+2. Selecione **"Static Site"** (NÃO selecione "Web Service")
 3. Escolha o repositório: **jogo-memoria-autores**
 4. Configure:
-   - **Name**: `jogo-memoria-autores` (ou o nome que preferir)
+   - **Name**: `jogo-memoria-autores`
    - **Branch**: `feature/quebra-cabeca-jogo` (ou `main` após merge)
-   - **Build Command**: `npm install && npm run build`
+   - **Build Command**: `npm ci && npm run build`
    - **Publish Directory**: `build`
-   - **Auto-Deploy**: Yes (recomendado)
+   - **Auto-Deploy**: Yes
 
 5. Clique em **"Create Static Site"**
 
-### 4. Configuração Automática (Opcional)
+### 4. NÃO use Blueprint/render.yaml (pode causar erro)
 
-Se você criou o arquivo `render.yaml` na raiz do projeto, o Render detectará automaticamente as configurações. Neste caso:
-
-1. Clique em **"New +"**
-2. Selecione **"Blueprint"**
-3. Escolha o repositório
-4. O Render lerá o `render.yaml` e configurará tudo automaticamente
+O arquivo `render.yaml` está incluído, mas para garantir que funcione:
+- **Delete o serviço se foi criado como "Web Service"**
+- Crie novamente como **"Static Site"** seguindo o passo 3
 
 ### 5. Aguardar o Deploy
 
