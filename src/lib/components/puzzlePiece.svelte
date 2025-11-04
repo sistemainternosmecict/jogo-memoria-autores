@@ -1,0 +1,102 @@
+<script lang="ts">
+	import type { PuzzlePiece } from '$lib/utils/puzzleUtils';
+
+	const {
+		piece,
+		imageSrc,
+		pieceWidth,
+		pieceHeight,
+		onDragStart,
+		onDragEnd,
+		isPlaced = false
+	}: {
+		piece: PuzzlePiece;
+		imageSrc: string;
+		pieceWidth: number;
+		pieceHeight: number;
+		onDragStart: (piece: PuzzlePiece) => void;
+		onDragEnd: () => void;
+		isPlaced?: boolean;
+	} = $props();
+
+	function handleDragStart(e: DragEvent) {
+		if (isPlaced) return;
+		e.dataTransfer!.effectAllowed = 'move';
+		e.dataTransfer!.setData('text/plain', piece.id.toString());
+		onDragStart(piece);
+	}
+</script>
+
+<div
+	draggable={!isPlaced}
+	ondragstart={handleDragStart}
+	ondragend={onDragEnd}
+	role="button"
+	tabindex={isPlaced ? -1 : 0}
+	class="puzzle-piece {isPlaced ? 'placed' : 'draggable'}"
+	style="
+    width: {pieceWidth}px;
+    height: {pieceHeight}px;
+    cursor: {isPlaced ? 'default' : 'grab'};
+  "
+>
+	<div
+		class="piece-image"
+		style="
+      background-image: url('{imageSrc}');
+      background-position: {piece.imageX}% {piece.imageY}%;
+      background-size: 300% 300%;
+      width: 100%;
+      height: 100%;
+    "
+	></div>
+	{#if !isPlaced}
+		<div class="piece-number">{piece.id + 1}</div>
+	{/if}
+</div>
+
+<style>
+	.puzzle-piece {
+		border-radius: 0.75rem;
+		overflow: hidden;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+		transition: transform 0.2s, box-shadow 0.2s;
+		position: relative;
+	}
+
+	.puzzle-piece.draggable:hover {
+		transform: scale(1.05);
+		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+		cursor: grab;
+	}
+
+	.puzzle-piece.draggable:active {
+		cursor: grabbing;
+	}
+
+	.puzzle-piece.placed {
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	.piece-image {
+		border-radius: 0.75rem;
+	}
+
+	.piece-number {
+		position: absolute;
+		top: 8px;
+		right: 8px;
+		background: rgba(6, 54, 54, 0.9);
+		color: white;
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: bold;
+		font-size: 18px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+		pointer-events: none;
+	}
+</style>
