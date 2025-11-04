@@ -50,9 +50,6 @@
       height: 100%;
     "
 	></div>
-	{#if !isPlaced}
-		<div class="piece-number">{piece.id + 1}</div>
-	{/if}
 </div>
 
 <style>
@@ -80,23 +77,5 @@
 
 	.piece-image {
 		border-radius: 0.75rem;
-	}
-
-	.piece-number {
-		position: absolute;
-		top: 8px;
-		right: 8px;
-		background: rgba(6, 54, 54, 0.9);
-		color: white;
-		width: 32px;
-		height: 32px;
-		border-radius: 50%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-weight: bold;
-		font-size: 18px;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-		pointer-events: none;
 	}
 </style>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Titulo from '$lib/components/titulo.svelte';
+	import TituloPuzzle from '$lib/components/tituloPuzzle.svelte';
 </script>
 
 <div class="select-none min-h-screen bg-white flex flex-col">
@@ -31,73 +32,144 @@
 			Escolha seu Jogo
 		</h1>
 		<p class="text-xl text-[#5291ad] mb-12 poppins-light text-center">
-			Selecione uma das opções abaixo para começar a jogar
+			Clique em uma das imagens abaixo para começar a jogar
 		</p>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl w-full">
 			<!-- Card Jogo da Memória -->
-			<a
-				href="/memoria"
-				class="game-card bg-gradient-to-br from-[#063636] to-[#0a4a4a] rounded-3xl p-8 flex flex-col items-center justify-center gap-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl group"
-			>
-				<div
-					class="w-32 h-32 bg-white rounded-full flex items-center justify-center text-6xl group-hover:animate-pulse"
-				>
-					🎴
+			<a href="/memoria" class="game-card-link group">
+				<div class="game-card">
+					<div class="thumbnail-container">
+						<img
+							src="/verso.svg"
+							alt="Jogo da Memória"
+							class="thumbnail-image"
+						/>
+						<div class="overlay">
+							<span class="play-text">▶ Jogar Agora</span>
+						</div>
+					</div>
+				<div class="card-footer">
+					<Titulo class="w-64 mx-auto mb-2" />
+					<p class="text-base text-[#5291ad] poppins-light">
+						Encontre os pares de cartas iguais
+					</p>
 				</div>
-				<h2 class="text-3xl font-bold text-white poppins-bold">Jogo da Memória</h2>
-				<p class="text-lg text-green-100 text-center poppins-light">
-					Encontre os pares de cartas iguais
-				</p>
-				<span
-					class="bg-[#5291ad] hover:bg-[#4994ce] px-8 py-3 rounded-xl text-white font-bold transition-all duration-300 poppins-semibold"
-				>
-					Jogar Agora →
-				</span>
+				</div>
 			</a>
 
 			<!-- Card Quebra-Cabeça -->
-			<a
-				href="/puzzle"
-				class="game-card bg-gradient-to-br from-[#5291ad] to-[#3d7a94] rounded-3xl p-8 flex flex-col items-center justify-center gap-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl group"
-			>
-				<div
-					class="w-32 h-32 bg-white rounded-full flex items-center justify-center text-6xl group-hover:animate-pulse"
-				>
-					🧩
+			<a href="/puzzle" class="game-card-link group">
+				<div class="game-card">
+					<div class="thumbnail-container">
+						<img
+							src="/puzzle/puzzle.jpg"
+							alt="Quebra-Cabeça"
+							class="thumbnail-image"
+						/>
+						<div class="overlay">
+							<span class="play-text">▶ Jogar Agora</span>
+						</div>
+					</div>
+					<div class="card-footer">
+						<TituloPuzzle class="w-64 mx-auto mb-2" />
+						<p class="text-base text-[#5291ad] poppins-light">
+							Monte a imagem arrastando as peças
+						</p>
+					</div>
 				</div>
-				<h2 class="text-3xl font-bold text-white poppins-bold">Quebra-Cabeça</h2>
-				<p class="text-lg text-blue-100 text-center poppins-light">
-					Monte a imagem arrastando as peças
-				</p>
-				<span
-					class="bg-[#063636] hover:bg-[#0a4a4a] px-8 py-3 rounded-xl text-white font-bold transition-all duration-300 poppins-semibold"
-				>
-					Jogar Agora →
-				</span>
 			</a>
 		</div>
 	</div>
 </div>
 
 <style>
+	.game-card-link {
+		text-decoration: none;
+		display: block;
+	}
+
 	.game-card {
-		min-height: 400px;
-		cursor: pointer;
+		background: white;
+		border-radius: 1.5rem;
+		overflow: hidden;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease;
+		border: 3px solid transparent;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
 	}
 
-	@keyframes pulse {
-		0%,
-		100% {
-			transform: scale(1);
-		}
-		50% {
-			transform: scale(1.1);
-		}
+	.game-card-link:hover .game-card {
+		transform: translateY(-8px);
+		box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+		border-color: #5291ad;
 	}
 
-	.group:hover .group-hover\:animate-pulse {
-		animation: pulse 1s infinite;
+	.thumbnail-container {
+		position: relative;
+		width: 100%;
+		height: 350px;
+		overflow: hidden;
+		background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+	}
+
+	.thumbnail-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+
+	.game-card-link:hover .thumbnail-image {
+		transform: scale(1.05);
+	}
+
+	.overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(6, 54, 54, 0.85);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	.game-card-link:hover .overlay {
+		opacity: 1;
+	}
+
+	.play-text {
+		color: white;
+		font-size: 1.75rem;
+		font-weight: bold;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+		transform: translateY(10px);
+		transition: transform 0.3s ease;
+	}
+
+	.game-card-link:hover .play-text {
+		transform: translateY(0);
+	}
+
+	.card-footer {
+		padding: 1.5rem;
+		background: #000000;
+		text-align: center;
+		height: 150px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.card-footer p {
+		margin: 0;
+		color: #5291ad;
 	}
 </style>
 

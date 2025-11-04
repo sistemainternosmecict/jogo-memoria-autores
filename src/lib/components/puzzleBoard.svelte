@@ -57,8 +57,6 @@
 					onDragEnd={() => {}}
 					isPlaced={true}
 				/>
-			{:else}
-				<div class="slot-number">{index + 1}</div>
 			{/if}
 		</div>
 	{/each}
@@ -109,13 +107,5 @@
 
 	.puzzle-slot.filled {
 		border: none;
-	}
-
-	.slot-number {
-		font-size: 48px;
-		font-weight: bold;
-		color: rgba(6, 54, 54, 0.3);
-		user-select: none;
-		pointer-events: none;
 	}
 </style>
